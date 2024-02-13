@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAYYYYYYYYYYYYYYYYY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #valentine-gif {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+        }
+        #playPauseBtn {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yvonee is my Valentine! heuheuheuhe :D</h1>
+    <img id="valentine-gif" src="hugging-bears.gif" alt="Valentine's Day Animation">
+    <p>Happy Valentine's Day, mi amorrr!</p>
+    <p><b>I love youuuu! <3333333</b></p>
+
+    <audio id="audio" autoplay loop>
+    <source src="happy happy happy.mp3" type="audio/mpeg">
+    </audio>
+    <button id="playPauseBtn" class="btn">Press for heppi</button>
+
+    <script>
+        var audio = document.getElementById("audio");
+        var playPauseBtn = document.getElementById("playPauseBtn");
+
+        playPauseBtn.addEventListener("click", function() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = "Relax a bit";
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = "Continue da heppi";
+            }
+        });
+    </script>
+</body>
+</html>

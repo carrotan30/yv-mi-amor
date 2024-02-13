@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi there, Yvonne!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #valentine-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+        }
+        #btn-yes {
+            background-color: #ff4d4d;
+        }
+        #btn-no {
+            background-color: #4d4dff;
+        }
+
+        #playPauseBtn {
+            background-color: #f5c77e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine?</h1>
+    <img id="valentine-image" src="toothless-dancing.gif" alt="Dancing Toothless">
+    <div>
+        <button id="btn-yes" class="btn" onclick="window.location.href='yes.html'">Yes</button>
+        <button id="btn-no" class="btn">No</button>
+    </div>
+
+    
+    <!-- <iframe src="silence.mp3" hidden></iframe> -->
+    <!-- <audio id="playAudio" src="driftveil-city.mp3" autoplay loop></audio> -->
+    <audio id="audio" autoplay loop>
+    <source src="driftveil-city.mp3" type="audio/mpeg">
+    </audio>
+    <button id="playPauseBtn" class="btn">Press to Boogie</button>
+
+    <script>
+        var audio = document.getElementById("audio");
+        var playPauseBtn = document.getElementById("playPauseBtn");
+
+        const msgs = ["Are you sureeee! Think againnn Yvonnee huehue", 
+                      "I'll buy you nuggies and plushiesss", 
+                      "I'll take you on lots of dates!", 
+                      "I'd let you bite me heh", 
+                      "We can cuddle all nighttt bubss",
+                      "Bubsss say yessss, I'll give u soy mirukuuu",
+                      "I'm yourss, so will you be minee",
+                      "I'll let u play w da googersss",
+                      "I'll cook and clean for yaa",
+                      "Don't play w mi hati eh bubsss :'c"];
+        // document.getElementById('btn-yes').addEventListener('click', function() {
+        //     alert('Great! Happy Valentine\'s Day!');
+        // });
+
+        document.getElementById('btn-no').addEventListener('click', function() {
+            alert(msgs[Math.floor(Math.random() * 10)]);
+        });
+
+        playPauseBtn.addEventListener("click", function() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = "Hol up. Pause";
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = "Continue da boogie woogie";
+            }
+        });
+    </script>
+
+</body>
+</html>
